@@ -1,4 +1,5 @@
 import json
+import yaml
 from jinja2 import Template, Environment, FileSystemLoader
 
 env = Environment(loader=FileSystemLoader("templates"))
@@ -20,9 +21,11 @@ def load_json_data_from_file(file_path):
 
 
 def load_yaml_data_from_file(file_path):
-    """
-        A compléter ....
-    """
+    
+    data = yaml.safe_load(open(file_path))
+    print(data)
+
+    return data
     pass
 
 
@@ -35,16 +38,31 @@ def render_network_config(template_name, data):
     pass
 
 def save_built_config(file_name, data):
-    """
-        A compléter ....
-    """
+    
+    f = open(file_name, "w")
+    f.write(data)
+    f.close()
+
     pass
 
 
 if __name__ == "__main__":
-    data = load_json_data_from_file('data/R2.json')
-    config = render_network_config('R2.j2',data)
-    print(config)
+    dataR2 = load_json_data_from_file('data/R2.json')
+    configR2 = render_network_config('R2.j2',dataR2)
+    save_built_config('config/R2.conf', configR2)
+
+    dataESW2 = load_json_data_from_file('data/ESW2.json')
+    configESW2 = render_network_config('ESW2.j2',dataESW2)
+    save_built_config('config/ESW2.conf', configESW2)
+
+    dataR2_yaml = load_yaml_data_from_file('data/R2.yaml')
+    configR2_yaml = render_network_config('R2.j2',dataR2_yaml)
+    save_built_config('config/R2_from_yaml.conf', configR2_yaml)
+
+    dataESW4_yaml = load_yaml_data_from_file('data/ESW4.yaml')
+    configESW4_yaml = render_network_config('ESW2.j2',dataESW4_yaml)
+    save_built_config('config/ESW4_from_yaml.conf', configESW4_yaml)
+
 
     pass
 

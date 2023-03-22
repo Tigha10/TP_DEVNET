@@ -1,7 +1,9 @@
 hostname {{hostname}}
+
 {% for interface in interfaces %}
 interface {{interface.name}}
-encapsulation dot1q {{interface.vlan_id}}
+switchport mode access 
+switchport access vlan {{interface.vlan_id}}
 no shut
 exit
 {% endfor %}
