@@ -1,0 +1,62 @@
+[
+    {
+    "hostname":"R1",
+    "interfaces": [
+        {
+            "name": "g2/0",
+            "ip": "172.16.100.62",
+            "mask": "255.255.255.0"
+        },
+        {
+            "name": "g0/0.99",
+            "ip": "172.16.40.254",
+            "mask": "255.255.255.0"
+        }
+    ],
+    "device_type": "cisco_ios",
+    "username": "cisco",
+    "password": "cisco"
+    },
+    {
+        "hostname":"R02",
+        "ip": "172.16.100.190",
+        "device_type": "cisco_ios",
+        "username": "cisco",
+        "password": "cisco"
+    },
+    {
+        "hostname":"R03",
+        "ip": "172.16.100.254",
+        "device_type": "cisco_ios",
+        "username": "cisco",
+        "password": "cisco"
+    },
+    {
+        "hostname":"ESW1",
+        "ip": "172.16.100.125",
+        "vlan_id":"99",
+        "mask": "255.255.255.0",
+        "device_type": "cisco_ios",
+        "username": "cisco",
+        "password": "cisco"
+    },
+    {
+        "hostname":"ESW2",
+        "ip": "172.16.100.189",
+        "vlan_id":"99",
+        "mask": "255.255.255.0",
+        "device_type": "cisco_ios",
+        "username": "cisco",
+        "password": "cisco"
+    },
+    {
+        "hostname":"ESW3",
+        "ip": "172.16.100.253",
+        "vlan_id":"99",
+        "mask": "255.255.255.0",
+        "device_type": "cisco_ios",
+        "username": "cisco",
+        "password": "cisco"
+    }
+    
+    ]
